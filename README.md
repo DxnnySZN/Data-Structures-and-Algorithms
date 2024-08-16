@@ -1,2 +1,2 @@
 # Data Structures & Algorithms C++
- project for M468 Independent CS/H
+ 1st Semester Project Repo for M468 Independent CS/H Using C++
