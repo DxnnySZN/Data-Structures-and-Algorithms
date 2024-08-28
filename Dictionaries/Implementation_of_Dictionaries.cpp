@@ -4,7 +4,7 @@
 
 using namespace std; // std => standard
 
-int main(){
+int main() {
     // key: name of student
     // value: #
 
@@ -16,12 +16,21 @@ int main(){
     results["Luna"] = 9;
     results["Anirudh"] = 6;
 
-    // results.begin() accesses the first element | returns a pointer so writing results.begin() by itself and then cout << results.begin() would not run because it's a memory address
+    // accessing the first element
+    map<string, int>::iterator it = results.begin(); // points to the first element (the key that's lexicographically first, Anirudh)
+    string name = it->first;
+    int value = it->second;
 
-    map<string, int>::iterator it = results.begin(); // this is the correct way to write
-    string name = it -> first;
-    int value = it -> second;
+    cout << "First Name of Student: " << name << ", #: " << value << endl;
 
-    cout << "Name of Student: " << name << ", #: " << value << endl;
+    // accessing the last element
+    it = --results.end(); // points to the last element (the key that's lexicographically last, Michael)
+    name = it->first;
+    value = it->second;
+
+    cout << "Last Name of Student: " << name << ", #: " << value << endl;
+
+    cout << results["Anna"] << endl; // returns 7 but if i do results["Anna"] = 10 below results["Anirudh"] = 6, it will return 10
+
     return 0;
 }
