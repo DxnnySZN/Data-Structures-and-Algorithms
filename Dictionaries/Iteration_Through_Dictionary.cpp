@@ -18,13 +18,22 @@ int main() {
     map<string, int>::iterator i;
     for(i = results.begin(); i != results.end(); ++i){ // do i != results.end() because we want access to all the keys and values
     // end() returns a iterator that points to the fictional element after the last one, which is not what we want
-        cout << "The student " << i->first << " has the mark: " << i->second << endl;
+        cout << "The student " << i->first << " has the #: " << i->second << endl;
     }
 
-    // Advanced Ways to Iterate
+    // Mini-Segment of the Advanced Ways to Iterate Subunit
+    
     map<string, int>::reverse_iterator ri;
     for (ri = results.rbegin(); ri != results.rend(); ++ri) { 
-        cout << "The student " << ri->first << " has the mark: " << ri->second << endl;
+        cout << "The student " << ri->first << " has the #: " << ri->second << endl;
     } 
+
+    // this segment returns the same output as the first for loop
+    map<string, int>::iterator j;
+    j = results.begin();
+    while(j != results.end()){
+        cout << "The student " << j->first << " has the #: " << j->second << endl;
+        ++j;
+    }
     return 0;
 }
