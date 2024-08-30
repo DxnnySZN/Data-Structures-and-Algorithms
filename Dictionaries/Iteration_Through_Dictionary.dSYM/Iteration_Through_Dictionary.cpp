@@ -20,13 +20,25 @@ int main() {
     // end() returns a iterator that points to the fictional element after the last one, which is not what we want
         cout << "The student " << i->first << " has the #: " << i->second << endl;
     }
+    /* output == The student Anirudh has the #: 6
+                 The student Anna has the #: 7
+                 The student Charlie has the #: 8
+                 The student Luna has the #: 9
+                 The student Michael has the #: 5 
 
-    // Mini-Segment of the Advanced Ways to Iterate Subunit
-    
+       ------------------------------------------------------------------------ 
+                 Mini-Segment of the Advanced Ways to Iterate Subunit
+       ------------------------------------------------------------------------ */
+     
     map<string, int>::reverse_iterator ri;
     for (ri = results.rbegin(); ri != results.rend(); ++ri) { 
         cout << "The student " << ri->first << " has the #: " << ri->second << endl;
     } 
+    /* output == The student Michael has the #: 5
+                 The student Luna has the #: 9
+                 The student Charlie has the #: 8
+                 The student Anna has the #: 7
+                 The student Anirudh has the #: 6 */
 
     // this segment returns the same output as the first for loop
     map<string, int>::iterator j;
