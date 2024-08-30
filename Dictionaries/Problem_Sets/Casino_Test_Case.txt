@@ -1,0 +1,7 @@
+Alice enters
+Alice wins 100
+Bob enters
+Bob wins 50
+Alice leaves
+Bob leaves
+end
