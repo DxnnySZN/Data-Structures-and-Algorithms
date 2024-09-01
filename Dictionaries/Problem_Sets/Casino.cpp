@@ -47,4 +47,23 @@ int main() {
         cout << i->first << " is winning " << i->second << endl;
     }
     return 0;
+
+    /* Casino_Test_Case: Daniel enters
+                         Daniel wins 1000
+                         Jeff wins 500
+                         Jeff leaves
+                         Chris leaves
+                         Alex enters
+                         Alex leaves
+                         Logan enters
+                         Logan wins 800
+                         end
+                         
+       Output: Jeff is not in the casino
+               Jeff is not in the casino
+               Chris is not in the casino
+               Alex has won 0
+               -----------
+               Daniel is winning 1000
+               Logan is winning 800 */
 }
