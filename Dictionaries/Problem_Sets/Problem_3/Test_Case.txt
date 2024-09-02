@@ -1,0 +1,13 @@
+a time
+a light
+f speed
+f time
+a time
+a time
+a speed
+a speed
+f graph
+a graph
+f time
+a lake
+f lake
