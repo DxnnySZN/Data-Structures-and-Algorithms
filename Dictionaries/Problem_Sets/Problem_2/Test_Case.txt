@@ -1,2 +1,15 @@
-store chicken
+store apple
+store banana
+store apple
 minimum?
+maximum?
+store cherry
+maximum?
+delete apple
+minimum?
+delete banana
+delete banana
+store banana
+delete apple
+minimum?
+end

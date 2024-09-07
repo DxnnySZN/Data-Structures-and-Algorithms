@@ -54,4 +54,26 @@ int main() {
         }
     }
     return 0;
+
+    /* Test_Case: store apple (count is 1)
+                  store banana (count is 1)
+                  store apple (count is 2)
+                  minimum? (apple with 2 occurrences)
+                  maximum? (banana with 1 occurrence)
+                  store cherry
+                  maximum? (cherry with 1 occurrence)
+                  delete apple (count is 1)
+                  minimum? (apple with 1 occurrence)
+                  delete banana (count is 0)
+                  delete banana (count is still 0)
+                  store banana (count is 1)
+                  delete apple (count is 0)
+                  minimum? (banana with 1 occurrence)
+                  end
+
+       Output:    minimum: apple, 2 time(s)
+                  maximum: banana, 1 time(s)
+                  maximum: cherry, 1 time(s)
+                  minimum: apple, 1 time(s)
+                  minimum: banana, 1 time(s) */
 }
