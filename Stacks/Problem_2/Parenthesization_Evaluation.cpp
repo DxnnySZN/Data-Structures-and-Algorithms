@@ -1,6 +1,3 @@
-/* (()[[(]])). -> incorrect at position 7 because it should've been (()[[()]]). also incorrect at position 9 but it is not displayed because an earlier position is already wrong
-   (()[](. -> incorrect at position 6 because it should've been (()[]). */
-
 #include <iostream>
 #include <stack>
 
@@ -42,4 +39,7 @@ int main() {
         cout << "incorrect" << position << endl;
     }
     return 0;
+
+    /* (()[[(]])). -> incorrect at position 7 because it should've been (()[[()]]). also incorrect at position 9 but it is not displayed because an earlier position is already wrong
+       (()[](. -> incorrect at position 6 because it should've been (()[]). */
 }
