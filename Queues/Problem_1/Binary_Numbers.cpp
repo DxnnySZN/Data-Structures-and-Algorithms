@@ -21,13 +21,30 @@ void generateBinaryNums(int num){
 
 int main() {
     int num;
-    cin >> num;
-
-    if(num <= 0){
+    while(cin >> num){
+        if(num <= 0){
         cout << "Please enter a positive integer" << endl;
-    }
-    else{
-        generateBinaryNums(num);
+        }
+        else{
+            generateBinaryNums(num);
+        }
     }
     return 0;
+
+    /* Test_Case: 5
+                  7
+                  
+       Output:    1 -> prints 1 and enqueues 10 and 11
+                  10 -> prints 10 and enqueues 100 and 101
+                  11 -> prints 11 and enqueues 110 and 111
+                  100 -> prints 100 and enqueues 1000 and 1001
+                  101 -> prints 101 and enqueues 1010 and 1011
+
+                  1 -> prints 1 and enqueues 10 and 11
+                  10 -> prints 10 and enqueues 100 and 101
+                  11 -> prints 11 and enqueues 110 and 111
+                  100 -> prints 100 and enqueues 1000 and 1001
+                  101 -> prints 101 and enqueues 1010 and 1011
+                  110 -> prints 110 and enqueues 1100 and 1101
+                  111 -> prints 111 and enqueues 1110 and 1111 */
 }
