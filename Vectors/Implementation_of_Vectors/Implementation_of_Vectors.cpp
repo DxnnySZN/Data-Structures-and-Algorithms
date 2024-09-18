@@ -22,4 +22,19 @@ int main() {
         cout << "The rizzler with index " << i << " has the mark(value): " << rizzRoom[i] << endl;
     }
     return 0;
+
+    /* Test_Case: 3.4 10 7.8 6.1 4.2 6.7 4.1 8.3 9.1 2.8 
+
+       Output: 
+       3 6 4 8 2
+       The rizzler with index 0 has the mark(value): 3.4
+       The rizzler with index 1 has the mark(value): 10
+       The rizzler with index 2 has the mark(value): 7.8
+       The rizzler with index 3 has the mark(value): 6.1
+       The rizzler with index 4 has the mark(value): 4.2
+       The rizzler with index 5 has the mark(value): 6.7
+       The rizzler with index 6 has the mark(value): 4.1
+       The rizzler with index 7 has the mark(value): 8.3
+       The rizzler with index 8 has the mark(value): 9.1
+       The rizzler with index 9 has the mark(value): 2.8 */
 }
