@@ -31,4 +31,9 @@ int main() {
     }
     cout << " is " << minimum << endl;
     return 0;
+
+    /* Test_Case: 13 (enter the size of the vector as the first input or else the output will not run as intended)
+                  7 2 9 8 1 6 9 5 2 4 4 0 3
+                  
+       Output:    the minimum value of [7, 2, 9, 8, 1, 6, 9, 5, 2, 4, 4, 0, 3] is 0 */
 }
