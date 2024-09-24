@@ -1,3 +1,5 @@
+// selection sort has time complexity of O(n^2) which indicates this sorting method is inefficient
+
 #include <iostream>
 #include <vector>
 
