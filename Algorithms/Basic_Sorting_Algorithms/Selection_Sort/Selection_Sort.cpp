@@ -7,6 +7,7 @@ using namespace std;
 
 /* the & gives access to the reference of the original vector
 utilize const because the vector will not be changed inside this function */
+
 int minPosition(const vector<int>& v, int left, int right){
     int position = left;
     for(int i = left + 1; i <= right; ++i){
@@ -26,29 +27,22 @@ void selection_sort(vector<int>& v){
 
 int main() {
     int size;
-    int randomGeneratedInt = rand() % 50 + 1; // generates int between 1 and 50
     while(cin >> size){
         vector<int> v(size);
         for(int i = 0; i < size; ++i){
-            v[i] = randomGeneratedInt;
-            if(size != 0){
-                cout << v[i] << " ";
-            }
-            else{
-                cout << v[i];
-            }
+            v[i] = rand() % 50 + 1; // generates int between 1 and 50
+            cout << v[i] << " ";
         }
         selection_sort(v);
-        cout << "'s reverse sequence is ";
+        cout << "'s sorted sequence is ";
         for(int i = 0; i < v.size(); ++i){
-            if(size != 0){
-                cout << v[i] << " ";
-            }
-            else{
-                cout << v[i];
-            }
+            cout << v[i] << " ";
         }
         cout << endl;
     }
     return 0;
+
+    /* Test_Case: 8
+    
+       Output:    42 18 35 1 20 25 29 9 's sorted sequence is 1 9 18 20 25 29 35 42 */
 }
