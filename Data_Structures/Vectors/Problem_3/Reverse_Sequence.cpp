@@ -25,4 +25,9 @@ int main() {
         }
     }
     return 0;
+
+    /* Test_Case: 7
+                  2 6 4 5 9 0 1
+                  
+       Output:    1095462 */
 }
