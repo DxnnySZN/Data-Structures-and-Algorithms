@@ -1,3 +1,14 @@
+/* adjacency matrix is a 2D vector/array of size n * n, where n is the number of nodes in a graph.
+   let the matrix be A[][]. A[i][j] = 1 indicates there is an edge from node i to node j.
+   
+   Graph:     0--------------1
+              |             /| \
+              |          /   |    \   
+              |       /      |      2
+              |    /         |    /
+              | /            | /
+              4--------------3 */
+
 #include <iostream>
 #include <vector>
 
@@ -24,18 +35,7 @@ int main(){
     }
     return 0;
 
-    /* Notes:     Adjacency Matrix is a 2D vector/array of size n * n, where n is the number of nodes in a graph
-                  Let the matrix be A[][]. A[i][j] = 1 indicates there is an edge from node i to node j
-    
-       Graph:     0--------------1
-                  |             /| \
-                  |          /   |    \   
-                  |       /      |      2
-                  |    /         |    /
-                  | /            | /
-                  4--------------3
-    
-       Test_Case: 0 1
+    /* Test_Case: 0 1
                   0 4
                   1 4
                   1 3
