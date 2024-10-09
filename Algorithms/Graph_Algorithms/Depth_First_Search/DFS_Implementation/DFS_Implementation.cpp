@@ -27,6 +27,17 @@ void dfs_recursive(const graph& G, int startingNode, vector<bool>& visited, list
     }
 }
 
+/* this will return dfs for all the nodes no matter if some nodes aren't connected to anything. 
+   this is different than the function above because the function above focuses on a single starting node and explores only its reachable nodes. */
+list<int> dfs_recursive(const graph& G){
+    int gSize = G.size();
+    list<int> output;
+    vector<bool> visited(gSize, false);
+    for(int i = 0; i < gSize; ++i){
+        dfs_recursive(G, i, visited, output);
+    }
+}
+
 int main() {
     ifstream infile("Test_Case.txt");
     if(!infile){
@@ -34,8 +45,8 @@ int main() {
         return 1;
     }
 
-    int nodeAmt = 5;
-    int edgeAmt = 5;
+    int nodeAmt = 4;
+    int edgeAmt = 2;
     graph G(nodeAmt); // initializes graph with the number of nodes
 
     // reads all edges from the file
@@ -55,7 +66,9 @@ int main() {
 
     vector<bool> visited(nodeAmt, false); // initializes visited vector
     list<int> output;
-    dfs_recursive(G, 0, visited, output); // starts DFS from node 0
+    // dfs_recursive(G, 0, visited, output); | original algorithm
+
+    output = dfs_recursive(G); // new algorithm
 
     // prints the output sequence
     cout << "DFS output: ";
@@ -66,11 +79,13 @@ int main() {
 
     return 0;
 
-    /* Test_Case: 0 1
-                  0 4
-                  1 4
-                  0 2
-                  2 3
+    /* Graph:     0---------------2
+                                 
+                                
+                  1---------------3
+                  
+       Test_Case: 0 2
+                  1 3
 
-       Output:    DFS output: 0 1 4 2 3 */ 
+       Output:    DFS output: 0 2 1 3 */ 
 }
