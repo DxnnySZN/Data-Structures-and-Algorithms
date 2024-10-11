@@ -36,6 +36,7 @@ list<int> dfs_recursive(const graph& G){
     for(int i = 0; i < gSize; ++i){
         dfs_recursive(G, i, visited, output);
     }
+    return output;
 }
 
 int main() {
