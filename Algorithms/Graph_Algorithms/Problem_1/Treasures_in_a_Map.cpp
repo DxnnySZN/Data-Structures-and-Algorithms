@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -16,64 +17,65 @@ bool isValid(graph& g, int initialRow, int initialColumn){
 
 bool dfs_treasure(graph& g, int initialRow, int initialColumn){
     if(g[initialRow][initialColumn] == 'X'){
-        return false;
+        return false; // blocked position
     }
     if(g[initialRow][initialColumn] == 't'){
-        return true;
+        return true; // found treasure
     }
-    g[initialRow][initialColumn] = 'X' // marks this position as visited
+    // marks this position as visited
+    g[initialRow][initialColumn] = 'X'; 
+
+    // explores in all 4 directions
     for(auto& d : directions){
         int newRow = initialRow + d.first;
         int newColumn = initialColumn + d.second;
+
+        // checks if the new position is valid and recursively calls dfs
         if(isValid(g, newRow, newColumn) && dfs_treasure(g, newRow, newColumn)){
             return true;
         }
     }
-    return false;
+    return false; // no treasure found in this path
 }
 
 int main() {
+    ifstream infile("Test_Case.txt");
+
+    if(!infile){
+        cerr << "unable to open file";
+        return 1;
+    }
+
     int rows, columns;
-    cin >> rows >> columns; // reads the rows and columns of the map
+    infile >> rows >> columns; // reads the rows and columns of the map
 
     graph g(rows, vector<char>(columns));
 
     // reads elements in the map
     for(int i = 0; i < rows; ++i){
         for(int j = 0; j < columns; ++j){
-            cin >> g[i][j];
+            infile >> g[i][j];
         }
     }
     int initialRow, initialColumn;
-    cin >> initialRow >> initialColumn; // initial row and column starting from 1
+    infile >> initialRow >> initialColumn; // initial row and column starting from 1
 
+    infile.close(); // don't forget to close the file after reading
+    
     bool treasure = dfs_treasure(g, initialRow - 1, initialColumn - 1);
     if(treasure){
-        cout << "yes";
+        cout << "yes" << endl;
     }
     else{
-        cout << "no";
+        cout << "no" << endl;
     }
-    cout << endl;
     return 0;
 
-    /* Test_Case1: 7 6
-                   ..t...
-                   ......
-                   tX..X.
-                   .X..Xt
-                   .XX...
-                   ..t...
-                   5 3
-
-       Output1:    yes
-
-       Test_Case2: 4 10
-                   ..t...X...
-                   .....X..t.
-                   XXXXX.X...
-                   .......X.t
-                   4 1
-
-       Output2:    no */ 
+    /* Test_Case: 3 3
+                  ..t
+                  .X.
+                  ...
+                  2 2
+                  
+       Output:    no (it should be yes) */
 }

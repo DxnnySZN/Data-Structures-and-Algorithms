@@ -59,7 +59,8 @@
   "files.associations": {
     "ostream": "cpp",
     "iostream": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "fstream": "cpp"
   },
   "C_Cpp.default.compilerPath": "C:\\msys64\\ucrt64\\bin\\g++.exe"
 }
