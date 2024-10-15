@@ -5,10 +5,10 @@
 using namespace std;
 
 typedef vector<vector<char>> graph;
-vector<pair<int, int>> directions = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} }; /* top ->    {-1, 0}
-                                                                             bottom -> {1, 0}
-                                                                             left ->   {0, -1}
-                                                                             right ->  {0, 1} */
+vector<pair<int, int>> directions = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} }; /* top (directions[0]) ->    {-1, 0}
+                                                                             bottom (directions[1]) -> {1, 0}
+                                                                             left (directions[2]) ->   {0, -1}
+                                                                             right (directions[3]) ->  {0, 1} */
 
 // returns true if position (initialRow, initialColumn) is inside of graph g
 bool isValid(graph& g, int initialRow, int initialColumn){
