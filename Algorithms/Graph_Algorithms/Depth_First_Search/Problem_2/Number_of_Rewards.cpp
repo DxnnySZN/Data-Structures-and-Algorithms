@@ -4,27 +4,28 @@
 using namespace std;
 
 int rows, columns;
-typedef vector<vector<char>> graph;
+typedef vector<vector<char>> graph; // defines a type for the graph as a 2D vector of characters
 vector<pair<int, int>> directions = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} }; /* top (directions[0]) ->    {-1, 0} 
                                                                              bottom (directions[1]) -> {1, 0}
                                                                              left (directions[2]) ->   {0, -1}
                                                                              right (directions[3]) ->  {0, 1} */
 
-// returns true if position (i, j) is valid
+// returns true if position (i, j) is within the grid boundaries
 bool valid(const graph& G, int i, int j){
 	return i >= 0 && i < int(G.size()) && j >= 0 && j < int(G[0].size());
 }
 
 void dfs_count(graph& G, int i, int j, int& count){
 	if(G[i][j] == 'X'){ 
-        return; // will return 0
+        return; // will return 0 because it's a wall
     }
 	if(G[i][j] == 't'){
-        ++count;
+        ++count; // counts the reward
     }
-	G[i][j] = 'X'; // mark the position (i, j) as visited
+	G[i][j] = 'X'; // marks the position (i, j) as visited to avoid re-visiting
 
-	for(auto& d : directions){
+	// explores all possible directions
+    for(auto& d : directions){
 		int adjustedRow = i + d.first;
 		int adjustedColumn = j + d.second;
 
@@ -50,7 +51,7 @@ int main() {
     int numRewards = 0;
 	dfs_count(G, initialRow - 1, initialColumn - 1, numRewards);
 	
-	cout << numRewards << endl;
+	cout << numRewards << endl; // outputs the total number of rewards found
     return 0;
 
     /* Test_Case1: 7 6
