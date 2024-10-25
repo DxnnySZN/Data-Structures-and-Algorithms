@@ -75,4 +75,16 @@ int main() {
     cout << endl;
     
     return 0;
+
+    /* Test_Case: 7 6
+                  ..t...
+                  ..XXX.
+                  ......
+                  tX..X.
+                  .X..Xt
+                  .XX...
+                  ..t...
+                  5 3 
+
+       Output:    minimum distance: 4 */
 }
