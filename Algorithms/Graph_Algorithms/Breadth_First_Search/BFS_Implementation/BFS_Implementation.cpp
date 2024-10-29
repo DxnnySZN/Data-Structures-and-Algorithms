@@ -1,3 +1,16 @@
+/* Breadth-First Search (BFS):
+        Approach: BFS explores a graph level by level, starting at the root (or a chosen node) and visiting all of its neighbors before moving on to the neighbors' neighbors.
+        Data Structure: Uses a queue (FIFO) to keep track of nodes to visit next.
+        Traversal Order: Visits all nodes at the present depth level before moving on to nodes at the next depth level.
+
+   Applications:
+        Finding the shortest path in an unweighted graph.
+        Level-order traversal in trees.
+        Networking and social connections (finding degrees of separation).
+
+   Time Complexity: O(V + E), where V is the number of vertices and E is the number of edges.
+   Space Complexity: O(V) because it stores all nodes in memory (due to queue usage). */
+
 #include <iostream>
 #include <vector>
 #include <list>

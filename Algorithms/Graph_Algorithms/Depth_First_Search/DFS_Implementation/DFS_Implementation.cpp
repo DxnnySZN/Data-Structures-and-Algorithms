@@ -1,3 +1,16 @@
+/* Depth-First Search (DFS):
+        Approach: DFS explores as far down a branch as possible before backtracking to explore other branches.
+        Data Structure: Uses a stack (LIFO) or recursion for its traversal.
+        Traversal Order: Goes as deep as possible along one branch, then backtracks and continues from the next unexplored branch.
+   
+   Applications:
+        Finding connected components in a graph.
+        Solving puzzles like mazes.
+        Topological sorting and detecting cycles in directed graphs.
+
+   Time Complexity: O(V + E), where V is the number of vertices and E is the number of edges.
+   Space Complexity: O(V) for the recursion stack (in the worst case, all vertices are visited). */
+
 #include <iostream>
 #include <vector>
 #include <list>
