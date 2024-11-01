@@ -81,5 +81,33 @@ int main() {
                   no
                   2
                   no
-                  1 */
+                  1 
+                  
+       Explanation: 1 0:
+                    One node with zero edges. This is a single isolated tree.
+                    Output: 1
+ 
+                    2 1 1 0:
+                    Two nodes connected by a single edge. This forms a simple tree.
+                    Output: 1
+     
+                    2 0:
+                    Two isolated nodes with no edges, representing two separate tree components.
+                    Output: 2
+ 
+                    4 3 0 1 1 2 0 2:
+                    Four nodes with edges between nodes 0-1, 1-2, and 0-2, forming a cycle between nodes 0, 1, and 2.
+                    Output: no (since there's a cycle, this graph is not a forest)
+ 
+                    8 6 0 4 5 3 3 1 3 7 2 4 6 0:
+                    Eight nodes with edges forming two separate cycle-free components.
+                    Output: 2
+ 
+                    8 6 0 1 2 1 3 4 4 5 5 3 7 6:
+                    Eight nodes with edges forming a cycle in one of the components.
+                    Output: no (since there's a cycle, this graph is not a forest)
+ 
+                    10 9 0 1 0 2 1 3 1 4 2 5 2 6 3 7 3 8 3 9:
+                    Ten nodes with edges forming a single connected component with no cycles, thus forming one large tree.
+                    Output: 1 */
 }
