@@ -96,4 +96,36 @@ int main() {
         cout << endl; 
     }
     return 0;
+
+    /* Test_Case: 4 a sample this is
+                  3
+                  this is
+                  is sample
+                  is a
+
+                  3 and this too
+                  0
+
+                  2 a b
+                  2
+                  a b
+                  b a
+
+                  Output: thisisasample
+                  andthistoo
+                  no valid ordering
+
+       Explanation: We have 4 words: a, sample, this, is.
+                    The dependencies are: this -> is, is -> sample, and is -> a.
+                    Following these dependencies, we can determine a valid ordering: thisisasample.
+                    Output: thisisasample
+
+                    We have 3 words: and, this, too, with no dependencies.
+                    Since there are no constraints, we can print the words in lexicographical order: andthistoo.
+                    Output: andthistoo
+
+                    We have 2 words: a and b.
+                    The dependencies are a -> b and b -> a, forming a cycle between a and b.
+                    Since a cycle exists, it’s impossible to establish a valid topological ordering.
+                    Output: no valid ordering */
 }
