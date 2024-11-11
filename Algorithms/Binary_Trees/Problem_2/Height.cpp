@@ -20,14 +20,18 @@ public: // all attributes & functions are accessible outside the class
     
 };
 
-// calculates the size (# of nodes) in a binary tree
-int size(Node* node) {
-    if(node == nullptr) { // empty binary tree (base case)
-        return 0;
+// calculates the height of the binary tree
+int height(Node* node) {
+    if(node == nullptr) {
+        return -1; // base case: height of an empty tree is -1
     }
-    else {
-        return 1 + size(node -> left) + size(node -> right); // recursive case: 1 (for the current node) + size of left subtree + size of right subtree
-    }
+    
+    // recursively finds the height of the left and right subtrees
+    int leftHeight = height(node -> left);
+    int rightHeight = height(node -> right);
+
+    // returns 1 (for the current node) + the larger height
+    return 1 + max(leftHeight, rightHeight);
 }
 
 int main() {
@@ -38,23 +42,25 @@ int main() {
     root -> left -> right = new Node(6);
     root -> left -> right -> left = new Node(5);
     root -> left -> right -> right = new Node(11);
+    root -> left -> right -> right = new Node(88);
 
     root -> right = new Node(9);
     root -> right -> right = new Node(9);
     root -> right -> right -> left = new Node(5);
 
-    cout << size(root) << endl;
+    cout << height(root) << endl;
 
     return 0;
 
-    /* Graph:         1
-                     / \
-                    7   9
-                   / \   \
-                  2   6   9
-                 / \   \
-                5  11   5
+    /* Graph:                 1
+                             / \
+                            7   9
+                           / \   \
+                          2   6   9
+                             / \
+                            5  88
+                                \
+                                 5
 
-    
-       Output:  9 */
+       Output:            4 */
 }
