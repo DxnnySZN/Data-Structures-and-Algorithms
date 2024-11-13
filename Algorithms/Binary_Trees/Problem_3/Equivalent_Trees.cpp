@@ -31,10 +31,10 @@ bool equal(Node* tree1, Node* tree2) {
         return false;
     }
 
-    // checks if data values are equal and recursively compares subtrees
-    return (tree1 -> data == tree2 -> data) && 
-    equal(tree1 -> left, tree2 -> left) && 
-    equal(tree1 -> right, tree2 -> right);
+    // compares non-empty trees
+    return (tree1 -> data == tree2 -> data) && // checks if root nodes of both trees are equivalent
+    equal(tree1 -> left, tree2 -> left) && // checks if the left nodes of both trees are equivalent
+    equal(tree1 -> right, tree2 -> right); // checks if the right nodes of both trees are equivalent
 }
 
 int main() {
