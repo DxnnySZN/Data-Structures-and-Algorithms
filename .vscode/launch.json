@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/yoon1521/Documents/GitHub/Data-Structures-and-Algorithms/Algorithms/Binary_Trees/Problem_7",
+      "program": "c:/Users/yoon1521/Documents/GitHub/Data-Structures-and-Algorithms/Algorithms/Binary_Trees/Problem_7/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
