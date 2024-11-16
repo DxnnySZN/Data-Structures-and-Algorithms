@@ -65,5 +65,42 @@ int main() {
                   / \   / \
                  3   7 12  20
 
-       Output : preorder traversal: 10 5 3 7 15 12 20 */
+       Output: preorder traversal: 10 5 3 7 15 12 20 
+       
+       Explanation: Start at the root node 10:
+                        Visit 10 (add 10 to the result).
+                        Traverse the left subtree rooted at node 5.
+
+                    At node 5:
+                        Visit 5 (add 5 to the result).
+                        Traverse the left subtree rooted at node 3.
+
+                    At node 3:
+                        Visit 3 (add 3 to the result).
+                        No left child → No right child → Return to node 5.
+
+                    Back at node 5:
+                        Traverse the right subtree rooted at node 7.
+
+                    At node 7:
+                        Visit 7 (add 7 to the result).
+                        No left child → No right child → Return to the root node 10.
+
+                    Back at the root node 10:
+                        Traverse the right subtree rooted at node 15.
+
+                    At node 15:
+                        Visit 15 (add 15 to the result).
+                        Traverse the left subtree rooted at node 12.
+
+                    At node 12:
+                        Visit 12 (add 12 to the result).
+                        No left child → No right child → Return to node 15.
+
+                    Back at node 15:
+                        Traverse the right subtree rooted at node 20.
+
+                    At node 20:
+                        Visit 20 (add 20 to the result).
+                        No left child → No right child → Return to the root node 10. */
 }
