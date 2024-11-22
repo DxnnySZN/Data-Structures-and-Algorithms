@@ -7,11 +7,11 @@ using namespace std;
 void print(const vector<int>& vector) {
     for (int i = 0; i < vector.size(); ++i) {
         cout << vector[i];
-        if ( i != vector.size() - 1) {
+        if (i != vector.size() - 1) {
             cout << " ";
         }
-        cout << endl;
     }
+    cout << endl;
 }
 
 /* generates all combinations of zeros and ones
@@ -66,4 +66,30 @@ int main() {
     backtrack(0, vector, 0, amtOfOnes); // starts the backtracking process from the first position
 
     return 0;
+
+    /* Test_Case: 5 2
+    
+       Output:    0 0 0 1 1
+                  0 0 1 0 1
+                  0 0 1 1 0
+                  0 1 0 0 1
+                  0 1 0 1 0
+                  0 1 1 0 0
+                  1 0 0 0 1
+                  1 0 0 1 0
+                  1 0 1 0 0
+                  1 1 0 0 0 
+
+       Explanation: the program generates all possible combinations of 0s and 1s of length sizeOfSolution, ensuring exactly amtOfOnes ones appear in each combination. 
+                    it uses recursion to explore all configurations systematically:
+
+                    Recursive Process:
+                        at each position, it tries both 0 and 1, ensuring the total number of ones does not exceed amtOfOnes.
+
+                    Pruning:
+                        if too many ones or zeros make it impossible to meet the requirement of amtOfOnes, that branch is skipped.
+
+                    Output:
+                        once the vector is completely filled (elements == vector.size()), the current valid combination is printed.
+                        the program generates all combinations of 5 elements with exactly 2 ones, printing in lexicographical order as the recursion explores leftmost positions first. */
 }
