@@ -1,3 +1,19 @@
+/* backtracking is a problem-solving technique that involves exploring all possible solutions by building them 
+   incrementally and abandoning a solution as soon as it is determined to be invalid or suboptimal.
+
+   in backtracking:
+        the algorithm recursively explores decision trees or paths, "backtracking" whenever a partial solution 
+        fails to satisfy the problem's constraints.
+        
+        this approach carefully eliminates paths that cannot lead to the correct solution, reducing the 
+        search space.
+
+   example applications:
+        solving puzzles (like sudoku), finding all permutations of a set, and pathfinding in mazes.
+
+   backtracking ensures that all possible solutions are explored but can be computationally expensive 
+   for large problem spaces. */
+
 #include <iostream>
 #include <vector>
 
